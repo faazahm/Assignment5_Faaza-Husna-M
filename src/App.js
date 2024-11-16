@@ -14,10 +14,8 @@ const App = () => {
       );
       const { rates } = response.data;
 
-      // Mata uang yang ingin ditampilkan
       const selectedCurrencies = ["CAD", "IDR", "JPY", "CHF", "EUR", "GBP"];
 
-      // Proses data untuk menambahkan kolom "We Buy" dan "We Sell"
       const processedRates = selectedCurrencies.map((currency) => ({
         currency,
         exchangeRate: parseFloat(rates[currency]),
