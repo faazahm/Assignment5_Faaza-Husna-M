@@ -10,8 +10,9 @@ const App = () => {
     try {
       setLoading(true);
       const response = await axios.get(
-        `https://api.currencyfreaks.com/latest?apikey=0c5f91dacf6c4028bd6fde71d85e1273`
+        `${process.env.REACT_APP_API_URL}?apikey=${process.env.REACT_APP_API_KEY}`
       );
+      console.log(response.data);
       const { rates } = response.data;
 
       const selectedCurrencies = ["CAD", "IDR", "JPY", "CHF", "EUR", "GBP"];
